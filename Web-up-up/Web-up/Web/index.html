@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ДЗ 1</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <section class="main" id="main">
+        <div class="main-wrapper">
+            <ul class="main-ul">
+                <li class="main-li"><a href="http://kubsu.ru" class="main-a">абсолютная гиперссылка на главную страницу сайта kubsu.ru</a></li>
+                <li class="main-li"><a href="https://kubsu.ru" class="main-a">абсолютная на главную сайта kubsu.ru в протоколе https</a></li>
+                <li class="main-li"><a href="https://kubsu.ru" class="main-a"><img src="./images/spider man.webp" alt="человек паук" class="main-img"></a></li>
+                <li class="main-li"><a href="/about/about.html" class="main-a">сокращенная ссылка на внутреннюю страницу</a></li>
+                <li class="main-li"><a href="/" class="main-a">сокращенная ссылка на главную страницу</a></li>
+                <li class="main-li"><a href="#main" class="main-a">ссылка на фрагмент текущей страницы</a></li>
+                <li class="main-li"><a href="https://kubsu.ru/search?query=math&sort=date&limit=10" class="main-a">ссылка с тремя параметрами в URL</a></li>
+                <li class="main-li"><a href="https://kubsu.ru/profile?id=12345" class="main-a">ссылка с параметром id в URL</a></li>
+                <li class="main-li"><a href="./hello.html" class="main-a">относительная на страницу в текущем каталоге</a></li>
+                <li class="main-li"><a href="./about/about.html" class="main-a">относительная на страницу в каталоге about</a></li>
+                <li class="main-li"><a href="../hello.html" class="main-a">относительная на страницу в каталоге уровнем выше текущего</a></li>
+                <li class="main-li"><a href="../../hello.html" class="main-a">относительная на страницу в каталоге двумя уровнями выше</a></li>
+                <li class="main-li"><p class="main-p">а так же вы можете посетить наш <a href="https://kubsu.ru" class="main-a">чудесный сайт</a></p></li>
+                <li class="main-li"><a href="https://example.com/article#chapter2">ссылка на фрагмент страницы стороннего сайта</a></li>
+                <li class="main-li">
+                    <div class="main-li-block">
+                        <img src="./images/spider man.webp" alt="Человек-паук" usemap="#imageMap" class="main-img">
+                        <map name="imageMap">
+                            <area shape="circle" coords="150,150,50" href="https://kubsu.ru" alt="Перейти на сайт КубГУ" title="Главная страница КубГУ">
+                            <area shape="rect" coords="10,10,100,100" href="https://kubsu.ru/about" alt="О КубГУ" title="О университете">
+                        </map>
+                    </div>
+                </li>
+                <li class="main-li"><a href="" class="main-a">ссылка с пустым href</a></li>
+                <li class="main-li"><a class="main-a">ссылка без href</a></li>
+                <li class="main-li"><a href="https://kubsu.ru" class="main-a" rel="nofollow">ссылка, по которой запрещен переход поисковикам</a></li>
+                <li class="main-li"><a href="https://kubsu.ru" class="main-a" rel="noindex">запрещенная для индексации поисковиками</a></li>
+                <li class="main-li">
+                    <ol class="main-ol">
+                        <li class="main-li"><a href="https://kubsu.ru" class="main-a" title="Главная страница КубГУ">Главная</a></li>
+                        <li class="main-li"><a href="https://kubsu.ru/about" class="main-a" title="О университете">О нас</a></li>
+                        <li class="main-li"><a href="https://kubsu.ru/admission" class="main-a" title="Информация для абитуриентов">Поступление</a></li>
+                    </ol>
+                </li>
+                <li class="main-li"><a href="href="ftp://user:password@ftp.example.com/file.txt" class="main-a">cсылка на файл на сервере FTP с авторизацией</a></li>
+            </ul>
+
+            <form action="#" class="main-form">
+                <label for="fio" class="main-label">Ваше Фио:</label>
+                <input type="text" id="fio" name="fio" class="main-inp">
+                <label for="tel-num" class="main-label">Ваш номер телефона:</label>
+                <input type="tel" id="tel-num" name="tel-num" class="main-inp">
+                <label for="mail" class="main-label">Ваш e-mail:</label>
+                <input type="email" id="mail" name="mail" class="main-inp">
+                <label for="date" class="main-label">Ваша дата рождения:</label>
+                <input type="date" id="date" name="date" class="main-inp">
+                <label for="gender" class="main-label">Ваш пол:</label>
+                <div class="main-form-block">
+                    <input type="radio" id="male" name="gender" value="male" class="main-inp">
+                    <label for="male" class="main-label">Мужской</label>
+                </div>
+                <div class="main-form-block">
+                    <input type="radio" id="female" name="gender" value="female" class="main-inp">
+                    <label for="female" class="main-label">Женский</label>
+                </div>
+                <div class="main-form-block">
+                    <input type="radio" id="dru" name="gender" value="dru" class="main-inp">
+                    <label for="dru" class="main-label">Друид 40-го уровня</label>
+                </div>
+                <label for="prog-lang" class="main-label">Ваш любимый язык програмирования:</label>
+                <select name="prog-lang" id="prog-lang" class="main-select">
+                    <option value="pas" class="main-option">Pascal</option>
+                    <option value="c" class="main-option">C</option>
+                    <option value="cpp" class="main-option">C++</option>
+                    <option value="js" class="main-option">JavaScript</option>
+                    <option value="php" class="main-option">PHP</option>
+                    <option value="py" class="main-option">Python</option>
+                    <option value="java" class="main-option">Java</option>
+                    <option value="hask" class="main-option">Haskel</option>
+                    <option value="clo" class="main-option">Clojure</option>
+                    <option value="pro" class="main-option">Prolog</option>
+                    <option value="sca" class="main-option">Scala</option>
+                </select>
+                <label for="bio" class="main-label">Ваша биография:</label>
+                <textarea id="bio" name="bio" rows="5" class="main-textarea"></textarea>
+                <div class="main-form-block">
+                    <input type="checkbox" id="agreement" name="agreement" class="main-chek">
+                    <label for="agreement" class="main-label">С контрактом ознакомлен(а)</label>
+                </div>
+                <button type="submit" class="main-but">Сохранить</button>
+            </form>
+
+        </div>
+    </section>
+</body>
+</html>
