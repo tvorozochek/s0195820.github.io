@@ -1,1 +1,35 @@
+name: Deploy to GitHub Pages
 
+on:
+  push:
+    branches:
+      - main   # или master, если у тебя главная ветка так называется
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Copy site files
+        run: |
+          mkdir public
+          cp -r Web-up-up/Web-up/Web/* public/
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: public
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v2
